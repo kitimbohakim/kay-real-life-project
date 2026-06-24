@@ -1,0 +1,638 @@
+/* ==========================
+DASHBOARD LAYOUT
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background: #f8f5ef;
+    color: #1f2937;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+}
+
+/* ==========================
+SIDEBAR
+========================== */
+
+.sidebar {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+
+    padding: 28px 20px;
+
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.logo {
+    margin-bottom: 40px;
+}
+
+.logo h2 {
+    font-size: 1.5rem;
+    color: #0f172a;
+}
+
+.logo span {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+
+    color: #334155;
+
+    padding: 14px 16px;
+
+    border-radius: 14px;
+
+    transition: all .3s ease;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: rgba(27, 93, 99, 0.12);
+
+    color: #1b5d63;
+}
+
+/* ==========================
+MAIN CONTENT
+========================== */
+
+.main-content {
+    padding: 32px;
+}
+
+.topbar {
+    margin-bottom: 32px;
+}
+
+.topbar h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.topbar p {
+    color: #64748b;
+}
+
+/* ==========================
+STATS
+========================== */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.65);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 24px;
+
+    padding: 24px;
+
+    transition: .3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.stat-card h3 {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.stat-card span {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1b5d63;
+}
+
+/* ==========================
+SUBMISSIONS
+========================== */
+
+.submissions {
+    background: rgba(255, 255, 255, 0.65);
+
+    backdrop-filter: blur(20px);
+
+    border-radius: 24px;
+
+    padding: 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 1.3rem;
+}
+
+.section-header button {
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    background: #1b5d63;
+    color: white;
+
+    cursor: pointer;
+}
+
+/* ==========================
+TABLE
+========================== */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+
+    padding: 14px;
+
+    color: #64748b;
+
+    font-size: 0.9rem;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+td {
+    padding: 18px 14px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+tr:hover {
+    background: rgba(27, 93, 99, 0.03);
+}
+
+/* ==========================
+STATUS BADGES
+========================== */
+
+.status {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 12px;
+
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status.new {
+    background: rgba(59, 130, 246, 0.12);
+    color: #2563eb;
+}
+
+.status.contacted {
+    background: rgba(234, 179, 8, 0.12);
+    color: #ca8a04;
+}
+
+.status.completed {
+    background: rgba(34, 197, 94, 0.12);
+    color: #16a34a;
+}
+
+.status.rejected {
+    background: rgba(239, 68, 68, 0.12);
+    color: #dc2626;
+}
+
+/* ==========================
+TABLET
+========================== */
+
+@media (max-width: 1024px) {
+
+    .dashboard {
+        grid-template-columns: 90px 1fr;
+    }
+
+    .logo span,
+    .sidebar nav a {
+        font-size: 0;
+    }
+
+    .sidebar nav a {
+        text-align: center;
+        padding: 14px;
+    }
+
+}
+
+/* ==========================
+MOBILE
+========================== */
+
+@media (max-width: 768px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        padding: 18px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* ==========================
+SMALL PHONES
+========================== */
+
+@media (max-width: 480px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar h1 {
+        font-size: 1.6rem;
+    }
+
+}
+
+/* ==========================
+ACTIVITY
+========================== */
+
+.activity-section {
+    margin-bottom: 30px;
+}
+
+.activity-card {
+    background: rgba(255, 255, 255, .65);
+
+    backdrop-filter: blur(20px);
+
+    border-radius: 24px;
+
+    padding: 24px;
+
+    border: 1px solid rgba(255, 255, 255, .8);
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.activity-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.activity-item strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.activity-item p {
+    color: #64748b;
+    font-size: .95rem;
+}
+
+.activity-dot {
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    margin-top: 6px;
+}
+
+.activity-dot.new {
+    background: #3b82f6;
+}
+
+.activity-dot.contacted {
+    background: #eab308;
+}
+
+.activity-dot.completed {
+    background: #22c55e;
+}
+
+/* ==========================
+ACTION BUTTON
+========================== */
+
+.action-btn {
+    border: none;
+
+    background: rgba(27, 93, 99, .12);
+
+    color: #1b5d63;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: .3s ease;
+}
+
+.action-btn:hover {
+    background: #1b5d63;
+    color: white;
+}
+
+/* ==========================
+MODAL
+========================== */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .5);
+
+    backdrop-filter: blur(6px);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 700px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 24px;
+}
+
+.modal-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 24px;
+}
+
+.close-modal {
+    border: none;
+
+    background: transparent;
+
+    font-size: 1.3rem;
+
+    cursor: pointer;
+}
+
+.submission-info p {
+    margin-bottom: 12px;
+}
+
+.submission-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 24px;
+}
+
+.status-btn {
+    border: none;
+
+    padding: 12px 16px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+.new-btn {
+    background: #dbeafe;
+}
+
+.contacted-btn {
+    background: #fef3c7;
+}
+
+.progress-btn {
+    background: #e0e7ff;
+}
+
+.complete-btn {
+    background: #dcfce7;
+}
+
+.reject-btn {
+    background: #dd5e5e;
+}
+
+.modal.is-open {
+    display: flex;
+}
+
+.notes-section {
+    margin-top: 24px;
+}
+
+.notes-section label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-weight: 600;
+}
+
+.notes-section textarea {
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(0, 0, 0, .1);
+
+    resize: vertical;
+
+    min-height: 120px;
+
+    margin-bottom: 12px;
+}
+
+.table-tools {
+    margin-bottom: 20px;
+}
+
+.table-tools input {
+    width: 100%;
+    max-width: 420px;
+
+    padding: 14px 18px;
+
+    border: 1px solid rgba(0, 0, 0, .08);
+
+    border-radius: 14px;
+
+    font-size: .95rem;
+
+    outline: none;
+}
+
+.table-tools input:focus {
+    border-color: #2f7c82;
+}
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.filter-btn {
+    border: none;
+    cursor: pointer;
+    padding: 10px 18px;
+    border-radius: 999px;
+
+    background: #ffffff;
+    color: #475569;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+
+    box-shadow:
+        0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+
+    background: #f8fafc;
+}
+
+.filter-btn.active {
+    background: #1f6f78;
+    color: #ffffff;
+
+    box-shadow:
+        0 10px 24px rgba(31, 111, 120, 0.25);
+}
+
+.delete-btn {
+    border: none;
+    cursor: pointer;
+
+    padding: 12px 20px;
+    border-radius: 12px;
+
+    background: #dc2626;
+    color: #fff;
+
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+}
+
+.pdf-btn {
+    border: none;
+    cursor: pointer;
+
+    padding: 12px 20px;
+    border-radius: 12px;
+
+    background: #0f766e;
+    color: white;
+
+    font-weight: 600;
+
+    transition: all .25s ease;
+}
+
+.pdf-btn:hover {
+    background: #115e59;
+    transform: translateY(-2px);
+}

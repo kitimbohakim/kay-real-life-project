@@ -1,0 +1,199 @@
+.codes-section {
+    padding-top: 24px;
+}
+
+.codes-layout {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.codes-hero {
+    padding: 28px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.codes-hero h3 {
+    margin: 18px 0 14px;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.06;
+    letter-spacing: -0.04em;
+    color: var(--text);
+}
+
+.codes-hero p {
+    margin: 0;
+    color: var(--text-soft);
+    line-height: 1.8;
+    font-size: 1rem;
+    max-width: 55ch;
+}
+
+.codes-points {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.codes-points span {
+    padding: 12px 14px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.34);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.95rem;
+    backdrop-filter: blur(10px);
+}
+
+.codes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.code-card {
+    padding: 22px;
+    min-height: 180px;
+    transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.code-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 60px rgba(92, 72, 40, 0.12);
+}
+
+.code-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+    color: var(--text);
+}
+
+.code-card p {
+    margin: 0;
+    color: var(--text-soft);
+    line-height: 1.8;
+    font-size: 0.98rem;
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 980px) {
+
+    .codes-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .codes-hero {
+        text-align: center;
+        padding: 24px;
+    }
+
+    .codes-hero p {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .codes-points {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .codes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .codes-section {
+        padding-top: 12px;
+    }
+
+    .codes-hero {
+        padding: 20px;
+    }
+
+    .codes-hero h3 {
+        font-size: 2rem;
+        margin: 14px 0;
+    }
+
+    .codes-hero p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .codes-points {
+        gap: 10px;
+    }
+
+    .codes-points span {
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    .codes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .code-card {
+        min-height: 150px;
+        padding: 18px;
+        text-align: center;
+    }
+
+    .code-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .code-card p {
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+}
+
+
+/* =====================================
+   SMALL PHONES
+===================================== */
+
+@media (max-width: 480px) {
+
+    .codes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .codes-points {
+        grid-template-columns: 1fr;
+    }
+
+    .code-card {
+        min-height: 140px;
+        padding: 16px;
+    }
+
+    .code-card h3 {
+        font-size: 1rem;
+    }
+
+    .code-card p {
+        font-size: 0.82rem;
+        line-height: 1.5;
+    }
+}

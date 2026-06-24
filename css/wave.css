@@ -1,0 +1,217 @@
+.wave-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.wave-section__inner {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 30px;
+    align-items: center;
+    padding: 36px 32px;
+    background:
+        radial-gradient(circle at top left, rgba(27, 93, 99, 0.16), transparent 36%),
+        radial-gradient(circle at bottom right, rgba(210, 180, 140, 0.18), transparent 34%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.14));
+    border: 1px solid rgba(255, 255, 255, 0.42);
+}
+
+.wave-section__copy h2 {
+    margin: 16px 0 14px;
+    font-size: clamp(2rem, 3.8vw, 3.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.05em;
+    color: var(--text);
+    max-width: 13ch;
+}
+
+.wave-section__copy p {
+    margin: 0;
+    max-width: 52ch;
+    color: var(--text-soft);
+    font-size: 1.02rem;
+    line-height: 1.8;
+}
+
+.wave-section__visual {
+    position: relative;
+    min-height: 220px;
+    border-radius: 28px;
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, rgba(27, 93, 99, 0.08), rgba(255, 255, 255, 0.02)),
+        rgba(255, 255, 255, 0.18);
+}
+
+.wave-track {
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #1b5d63, #7cc6c3, #d2b48c, #1b5d63);
+    background-size: 220% 100%;
+    box-shadow: 0 0 18px rgba(27, 93, 99, 0.18);
+    animation: waveMove 5s linear infinite;
+}
+
+.wave-track--one {
+    top: 30%;
+    transform: rotate(-8deg);
+    opacity: 0.95;
+}
+
+.wave-track--two {
+    top: 52%;
+    transform: rotate(4deg);
+    opacity: 0.7;
+    animation-duration: 6.2s;
+}
+
+.wave-track--three {
+    top: 72%;
+    transform: rotate(-5deg);
+    opacity: 0.5;
+    animation-duration: 7.2s;
+}
+
+.wave-dot {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(10px);
+    animation: floatDot 4s ease-in-out infinite;
+}
+
+.wave-dot--one {
+    top: 18%;
+    left: 14%;
+    background: rgba(27, 93, 99, 0.9);
+}
+
+.wave-dot--two {
+    top: 26%;
+    right: 20%;
+    animation-delay: 0.5s;
+    background: rgba(210, 180, 140, 0.95);
+}
+
+.wave-dot--three {
+    bottom: 18%;
+    left: 26%;
+    animation-delay: 1s;
+    background: rgba(124, 198, 195, 0.92);
+}
+
+.wave-dot--four {
+    bottom: 26%;
+    right: 12%;
+    animation-delay: 1.4s;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes waveMove {
+    0% {
+        background-position: 0% 50%;
+        transform-origin: center;
+    }
+
+    100% {
+        background-position: 220% 50%;
+    }
+}
+
+@keyframes floatDot {
+
+    0%,
+    100% {
+        transform: translateY(0px) scale(1);
+    }
+
+    50% {
+        transform: translateY(-10px) scale(1.06);
+    }
+}
+
+@media (max-width: 980px) {
+
+    .wave-section__inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px;
+    }
+
+    /* Visual first */
+    .wave-section__visual {
+        order: 1;
+        min-height: 240px;
+    }
+
+    .wave-section__copy {
+        order: 2;
+        text-align: center;
+    }
+
+    .wave-section__copy h2 {
+        max-width: 100%;
+        font-size: clamp(2rem, 6vw, 2.8rem);
+    }
+
+    .wave-section__copy p {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .badge {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .wave-section {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .wave-section__inner {
+        padding: 20px;
+        border-radius: 28px;
+    }
+
+    .wave-section__visual {
+        min-height: 220px;
+    }
+
+    .wave-section__copy h2 {
+        font-size: 2rem;
+        line-height: 1.1;
+        margin: 12px 0;
+    }
+
+    .wave-section__copy p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .wave-dot {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.wave-section__inner {
+    transition:
+        transform 300ms ease,
+        box-shadow 300ms ease;
+}
+
+.wave-section__inner:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 80px rgba(92, 72, 40, 0.14);
+}

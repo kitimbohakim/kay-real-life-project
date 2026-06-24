@@ -1,0 +1,1098 @@
+/* =====================================
+PRIVACY HERO
+===================================== */
+
+.privacy-hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 32px;
+    align-items: center;
+
+    padding-top: 30px;
+}
+
+.privacy-hero__content h1 {
+    margin: 16px 0 18px;
+
+    font-size: clamp(2.8rem, 5.8vw, 5rem);
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+
+    color: var(--text);
+
+    max-width: 10ch;
+}
+
+.privacy-hero__content p {
+    margin: 0;
+
+    max-width: 60ch;
+
+    color: var(--text-soft);
+
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    margin-top: 28px;
+}
+
+.privacy-hero__visual {
+    position: relative;
+
+    min-height: 620px;
+
+    padding: 12px;
+
+    overflow: hidden;
+}
+
+.privacy-hero__visual img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: calc(var(--radius-xl) - 8px);
+}
+
+.privacy-hero__overlay {
+    position: absolute;
+
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    padding: 20px 22px;
+}
+
+.privacy-hero__overlay h3 {
+    margin: 0 0 8px;
+
+    color: var(--text);
+
+    font-size: 1.2rem;
+}
+
+.privacy-hero__overlay p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    line-height: 1.7;
+}
+
+/* =====================================
+TABLET
+===================================== */
+
+@media (max-width: 1100px) {
+
+    .privacy-hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .privacy-hero__content h1 {
+        max-width: 100%;
+    }
+
+    .privacy-hero__visual {
+        min-height: 500px;
+    }
+
+}
+
+/* =====================================
+MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .privacy-hero {
+        gap: 20px;
+    }
+
+    .privacy-hero__content {
+        order: 2;
+    }
+
+    .privacy-hero__visual {
+        order: 1;
+        min-height: 420px;
+    }
+
+    .privacy-hero__content h1 {
+        font-size: clamp(2.3rem, 10vw, 3.8rem);
+
+        max-width: 100%;
+    }
+
+    .privacy-hero__content p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .privacy-hero__overlay {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+
+        padding: 16px;
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+}
+
+/* =====================================
+SMALL PHONES
+===================================== */
+
+@media (max-width: 480px) {
+
+    .privacy-hero__visual {
+        min-height: 360px;
+    }
+
+    .privacy-hero__overlay h3 {
+        font-size: 1rem;
+    }
+
+    .privacy-hero__overlay p {
+        font-size: 0.9rem;
+    }
+
+}
+
+/* =====================================
+INFORMATION WE COLLECT
+===================================== */
+
+.information-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.information-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.information-card {
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 280ms ease,
+        box-shadow 280ms ease,
+        border-color 280ms ease;
+}
+
+.information-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 24px 60px rgba(92, 72, 40, 0.10);
+
+    border-color: rgba(27, 93, 99, 0.18);
+}
+
+.information-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 18px;
+
+    background: rgba(27, 93, 99, 0.10);
+
+    font-size: 1.5rem;
+}
+
+.information-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 1.15rem;
+    line-height: 1.3;
+
+    color: var(--text);
+}
+
+.information-card p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* ==========================
+TABLET
+========================== */
+
+@media (max-width: 1100px) {
+
+    .information-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* ==========================
+MOBILE
+========================== */
+
+@media (max-width: 768px) {
+
+    .information-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .information-card {
+        padding: 20px;
+    }
+
+    .information-icon {
+        width: 50px;
+        height: 50px;
+
+        font-size: 1.3rem;
+
+        margin-bottom: 14px;
+    }
+
+    .information-card h3 {
+        font-size: 1rem;
+    }
+
+    .information-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+}
+
+/* ==========================
+SMALL PHONES
+========================== */
+
+@media (max-width: 480px) {
+
+    .information-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .information-card {
+        padding: 18px;
+    }
+
+}
+
+/* =====================================
+HOW WE USE INFORMATION
+===================================== */
+
+.usage-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.usage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.usage-card {
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 280ms ease,
+        box-shadow 280ms ease,
+        border-color 280ms ease;
+}
+
+.usage-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 24px 60px rgba(92, 72, 40, 0.10);
+
+    border-color: rgba(27, 93, 99, 0.18);
+}
+
+.usage-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 18px;
+
+    background: rgba(27, 93, 99, 0.10);
+
+    font-size: 1.5rem;
+}
+
+.usage-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 1.15rem;
+    line-height: 1.3;
+
+    color: var(--text);
+}
+
+.usage-card p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+
+    .usage-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .usage-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .usage-card {
+        padding: 20px;
+    }
+
+    .usage-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        margin-bottom: 14px;
+    }
+
+    .usage-card h3 {
+        font-size: 1rem;
+    }
+
+    .usage-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+    .usage-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .usage-card {
+        padding: 18px;
+    }
+
+}
+
+/* =====================================
+COOKIES & TRACKING
+===================================== */
+
+.cookies-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.cookies-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.cookie-card {
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 280ms ease,
+        box-shadow 280ms ease,
+        border-color 280ms ease;
+}
+
+.cookie-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 24px 60px rgba(92, 72, 40, 0.10);
+
+    border-color: rgba(27, 93, 99, 0.18);
+}
+
+.cookie-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 18px;
+
+    background: rgba(27, 93, 99, 0.10);
+
+    font-size: 1.5rem;
+}
+
+.cookie-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 1.15rem;
+    line-height: 1.3;
+
+    color: var(--text);
+}
+
+.cookie-card p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+
+    .cookies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .cookies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .cookie-card {
+        padding: 20px;
+    }
+
+    .cookie-icon {
+        width: 50px;
+        height: 50px;
+
+        font-size: 1.3rem;
+
+        margin-bottom: 14px;
+    }
+
+    .cookie-card h3 {
+        font-size: 1rem;
+    }
+
+    .cookie-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+}
+
+/* Small Phones */
+
+@media (max-width: 480px) {
+
+    .cookies-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cookie-card {
+        padding: 18px;
+    }
+
+}
+
+/* =====================================
+THIRD-PARTY SERVICES
+===================================== */
+
+.third-party-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.third-party-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.third-party-card {
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 280ms ease,
+        box-shadow 280ms ease,
+        border-color 280ms ease;
+}
+
+.third-party-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 24px 60px rgba(92, 72, 40, 0.10);
+
+    border-color: rgba(27, 93, 99, 0.18);
+}
+
+.third-party-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 18px;
+
+    background: rgba(27, 93, 99, 0.10);
+
+    font-size: 1.5rem;
+}
+
+.third-party-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 1.15rem;
+    line-height: 1.3;
+
+    color: var(--text);
+}
+
+.third-party-card p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+
+    .third-party-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .third-party-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .third-party-card {
+        padding: 20px;
+    }
+
+    .third-party-icon {
+        width: 50px;
+        height: 50px;
+
+        font-size: 1.3rem;
+
+        margin-bottom: 14px;
+    }
+
+    .third-party-card h3 {
+        font-size: 1rem;
+    }
+
+    .third-party-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+}
+
+/* Small Phones */
+
+@media (max-width: 480px) {
+
+    .third-party-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .third-party-card {
+        padding: 18px;
+    }
+
+}
+
+/* =====================================
+YOUR RIGHTS
+===================================== */
+
+.rights-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.rights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.rights-card {
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 280ms ease,
+        box-shadow 280ms ease,
+        border-color 280ms ease;
+}
+
+.rights-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 24px 60px rgba(92, 72, 40, 0.10);
+
+    border-color: rgba(27, 93, 99, 0.18);
+}
+
+.rights-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 18px;
+
+    background: rgba(27, 93, 99, 0.10);
+
+    font-size: 1.5rem;
+}
+
+.rights-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 1.15rem;
+    line-height: 1.3;
+
+    color: var(--text);
+}
+
+.rights-card p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+
+    .rights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .rights-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .rights-card {
+        padding: 20px;
+    }
+
+    .rights-icon {
+        width: 50px;
+        height: 50px;
+
+        font-size: 1.3rem;
+
+        margin-bottom: 14px;
+    }
+
+    .rights-card h3 {
+        font-size: 1rem;
+    }
+
+    .rights-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+}
+
+/* Small Phones */
+
+@media (max-width: 480px) {
+
+    .rights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rights-card {
+        padding: 18px;
+    }
+
+}
+
+/* =====================================
+CONTACT PRIVACY
+===================================== */
+
+.contact-privacy-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.contact-privacy-inner {
+    padding: 36px;
+}
+
+.contact-privacy-inner h2 {
+    margin: 14px 0 12px;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.05em;
+
+    color: var(--text);
+
+    max-width: 12ch;
+}
+
+.contact-privacy-inner p {
+    margin: 0;
+
+    max-width: 65ch;
+
+    color: var(--text-soft);
+    line-height: 1.9;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+
+    margin-top: 28px;
+}
+
+.contact-method {
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform 280ms ease,
+        border-color 280ms ease;
+}
+
+.contact-method:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(27, 93, 99, 0.20);
+}
+
+.contact-method strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text);
+
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.contact-method span {
+    color: var(--text-soft);
+
+    line-height: 1.7;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .contact-privacy-inner {
+        padding: 24px;
+    }
+
+    .contact-privacy-inner h2 {
+        max-width: 100%;
+    }
+
+    .contact-method {
+        padding: 18px;
+    }
+
+}
+
+/* Small Phones */
+
+@media (max-width: 480px) {
+
+    .contact-privacy-inner {
+        padding: 20px;
+    }
+
+}
+
+/* =====================================
+POLICY UPDATES
+===================================== */
+
+.policy-updates {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.policy-updates__inner {
+    padding: 36px;
+}
+
+.policy-updates__inner h2 {
+    margin: 14px 0 12px;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.05em;
+
+    color: var(--text);
+
+    max-width: 12ch;
+}
+
+.policy-updates__inner p {
+    margin: 0;
+
+    max-width: 65ch;
+
+    color: var(--text-soft);
+
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    .policy-updates__inner {
+        padding: 28px;
+    }
+
+    .policy-updates__inner h2 {
+        max-width: 100%;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .policy-updates__inner {
+        padding: 24px;
+    }
+
+    .policy-updates__inner p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+}
+
+/* Small Phones */
+
+@media (max-width: 480px) {
+
+    .policy-updates__inner {
+        padding: 20px;
+    }
+
+    .policy-updates__inner h2 {
+        font-size: clamp(1.8rem, 8vw, 2.3rem);
+    }
+
+}
+
+/* =====================================
+PRIVACY CTA
+===================================== */
+
+.privacy-cta {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.privacy-cta__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+    padding: 32px;
+}
+
+.privacy-cta__inner h2 {
+    margin: 12px 0 0;
+
+    max-width: 16ch;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.05em;
+
+    color: var(--text);
+}
+
+.privacy-cta__inner .btn {
+    flex-shrink: 0;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    .privacy-cta__inner {
+        padding: 28px;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .privacy-cta__inner {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 24px;
+    }
+
+    .privacy-cta__inner h2 {
+        max-width: 100%;
+    }
+
+}
+
+/* Small Phones */
+
+@media (max-width: 480px) {
+
+    .privacy-cta__inner {
+        padding: 20px;
+    }
+
+    .privacy-cta__inner .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+}
+
+.badge--dark {
+    background: rgba(255, 255, 255, 0.35);
+    color: var(--text);
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    backdrop-filter: blur(10px);
+}

@@ -1,0 +1,19 @@
+:root {
+    --bg: #f5f0e8;
+    --bg-soft: #fffaf3;
+    --panel: rgba(255, 255, 255, 0.28);
+    --panel-strong: rgba(255, 255, 255, 0.46);
+    --panel-border: rgba(255, 255, 255, 0.42);
+    --text: #17353a;
+    --text-soft: #66777a;
+    --teal: #1b5d63;
+    --teal-strong: #164c51;
+    --amber: #d2b48c;
+    --shadow: 0 18px 60px rgba(92, 72, 40, 0.1);
+    --shadow-soft: 0 18px 50px rgba(92, 72, 40, 0.06);
+    --radius-xl: 28px;
+    --radius-lg: 22px;
+    --radius-md: 16px;
+    --max-width: 1200px;
+    --transition: 260ms ease;
+}

@@ -1,0 +1,622 @@
+/* =====================================
+HERO SECTION
+===================================== */
+
+.codes-hero {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 32px;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.codes-hero__content h1 {
+    margin: 16px 0 18px;
+
+    font-size: clamp(2.8rem, 5.8vw, 5rem);
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+
+    color: var(--text);
+
+    max-width: 11ch;
+}
+
+.codes-hero__content p {
+    margin: 0;
+
+    max-width: 62ch;
+
+    color: var(--text-soft);
+
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    margin-top: 28px;
+}
+
+.codes-hero__visual {
+    position: relative;
+
+    min-height: 620px;
+
+    padding: 12px;
+
+    overflow: hidden;
+}
+
+.codes-hero__visual img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: calc(var(--radius-xl) - 8px);
+}
+
+.codes-hero__overlay {
+    position: absolute;
+
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    padding: 20px 22px;
+}
+
+.codes-hero__overlay h3 {
+    margin: 0 0 8px;
+
+    color: var(--text);
+
+    font-size: 1.2rem;
+}
+
+.codes-hero__overlay p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    line-height: 1.7;
+}
+
+/* =====================================
+TABLETS
+===================================== */
+
+@media (max-width: 1100px) {
+
+    .codes-hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .codes-hero__content h1 {
+        max-width: 100%;
+    }
+
+    .codes-hero__visual {
+        min-height: 500px;
+    }
+
+}
+
+/* =====================================
+MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .codes-hero {
+        gap: 20px;
+    }
+
+    .codes-hero__content {
+        order: 2;
+    }
+
+    .codes-hero__visual {
+        order: 1;
+        min-height: 420px;
+    }
+
+    .codes-hero__content h1 {
+        font-size: clamp(2.3rem, 10vw, 3.8rem);
+        max-width: 100%;
+    }
+
+    .codes-hero__content p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .codes-hero__overlay {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+
+        padding: 16px;
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+}
+
+/* =====================================
+SMALL PHONES
+===================================== */
+
+@media (max-width: 480px) {
+
+    .codes-hero__visual {
+        min-height: 360px;
+    }
+
+    .codes-hero__overlay h3 {
+        font-size: 1rem;
+    }
+
+    .codes-hero__overlay p {
+        font-size: 0.9rem;
+    }
+
+}
+
+/* =====================================
+CORE INDUSTRY CODES
+===================================== */
+
+.codes-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.codes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.code-card {
+    padding: 24px;
+
+    transition:
+        transform 280ms ease,
+        box-shadow 280ms ease,
+        border-color 280ms ease;
+}
+
+.code-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 24px 60px rgba(92, 72, 40, 0.10);
+
+    border-color: rgba(27, 93, 99, 0.18);
+}
+
+.code-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 16px;
+
+    border-radius: 18px;
+
+    background: rgba(27, 93, 99, 0.10);
+
+    font-size: 1.5rem;
+}
+
+.code-label {
+    display: inline-flex;
+
+    padding: 8px 14px;
+    margin-bottom: 14px;
+
+    border-radius: 999px;
+
+    background: rgba(27, 93, 99, 0.08);
+
+    color: var(--teal);
+
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.code-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 1.15rem;
+    line-height: 1.35;
+
+    color: var(--text);
+}
+
+.code-card p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    line-height: 1.8;
+}
+
+/* =====================================
+TABLET
+===================================== */
+
+@media (max-width: 1000px) {
+
+    .codes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* =====================================
+MOBILE
+===================================== */
+.codes-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+
+    align-items: stretch;
+}
+
+.guide-card {
+    height: 100%;
+}
+
+
+
+@media (max-width: 580px) {
+
+    .codes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .code-card {
+        padding: 20px;
+    }
+
+    .code-icon {
+        width: 50px;
+        height: 50px;
+
+        font-size: 1.3rem;
+    }
+
+}
+
+/* =====================================
+WHICH CODES DO I NEED
+===================================== */
+
+.codes-guide {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.codes-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+
+    align-items: start;
+}
+
+.guide-card {
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    height: auto;
+
+    transition:
+        transform 280ms ease,
+        box-shadow 280ms ease;
+}
+
+.guide-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 24px 60px rgba(92, 72, 40, 0.10);
+}
+
+.guide-icon {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 12px;
+
+    border-radius: 16px;
+
+    background: rgba(27, 93, 99, 0.10);
+
+    font-size: 1.3rem;
+}
+
+.guide-card h3 {
+    margin: 0 0 10px;
+
+    font-size: 1.05rem;
+    line-height: 1.3;
+
+    color: var(--text);
+}
+
+.guide-card ul {
+    margin: 0 0 12px;
+    padding: 0;
+
+    list-style: none;
+}
+
+.guide-card ul li {
+    padding: 3px 0;
+
+    color: var(--text-soft);
+
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.guide-card p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    line-height: 1.6;
+    font-size: 0.92rem;
+}
+
+/* =====================================
+LAPTOP
+===================================== */
+
+@media (max-width: 1200px) {
+
+    .codes-guide-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+/* =====================================
+TABLET
+===================================== */
+
+@media (max-width: 900px) {
+
+    .codes-guide-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .guide-card:last-child {
+        grid-column: 1 / -1;
+
+        max-width: 420px;
+
+        margin: 0 auto;
+    }
+
+}
+
+/* =====================================
+PHONE
+===================================== */
+
+@media (max-width: 580px) {
+
+    .codes-guide-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .guide-card {
+        padding: 16px;
+    }
+
+    .guide-icon {
+        width: 44px;
+        height: 44px;
+
+        font-size: 1.15rem;
+    }
+
+    .guide-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .guide-card ul li {
+        font-size: 0.85rem;
+    }
+
+    .guide-card p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .guide-card:last-child {
+        grid-column: 1 / -1;
+
+        max-width: 300px;
+
+        margin: 0 auto;
+    }
+
+}
+
+/* =====================================
+FAQ SECTION
+===================================== */
+
+.codes-faq {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.faq-card {
+    padding: 24px;
+
+    transition:
+        transform 280ms ease,
+        box-shadow 280ms ease;
+}
+
+.faq-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 24px 60px rgba(92, 72, 40, 0.10);
+}
+
+.faq-card h3 {
+    margin: 0 0 12px;
+
+    font-size: 1.1rem;
+    line-height: 1.4;
+
+    color: var(--text);
+}
+
+.faq-card p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* ==========================
+TABLET
+========================== */
+
+@media (max-width: 1000px) {
+
+    .faq-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* ==========================
+PHONE
+========================== */
+
+@media (max-width: 580px) {
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-card {
+        padding: 20px;
+    }
+
+}
+
+/* =====================================
+CTA SECTION
+===================================== */
+
+.codes-cta {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.codes-cta__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+
+    padding: 32px;
+}
+
+.codes-cta__inner h2 {
+    margin: 12px 0 0;
+
+    max-width: 15ch;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.05em;
+
+    color: var(--text);
+}
+
+.codes-cta__inner .btn {
+    flex-shrink: 0;
+}
+
+/* ==========================
+TABLET
+========================== */
+
+@media (max-width: 900px) {
+
+    .codes-cta__inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .codes-cta__inner h2 {
+        max-width: 100%;
+    }
+
+}
+
+/* ==========================
+PHONE
+========================== */
+
+@media (max-width: 580px) {
+
+    .codes-cta__inner {
+        padding: 24px;
+    }
+
+    .codes-cta__inner .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+.badge--dark {
+    background: rgba(255, 255, 255, 0.35);
+    color: var(--text);
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    backdrop-filter: blur(10px);
+}

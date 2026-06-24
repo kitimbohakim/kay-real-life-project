@@ -1,0 +1,32 @@
+[
+    {
+        "code": "ISRC",
+        "title": "International Standard Recording Code",
+        "description": "Identifies a specific sound recording and helps track streams, sales and royalties."
+    },
+    {
+        "code": "UPC",
+        "title": "Universal Product Code",
+        "description": "Identifies albums and singles across digital stores."
+    },
+    {
+        "code": "ISNI",
+        "title": "International Standard Name Identifier",
+        "description": "Distinguishes artists with similar names and improves metadata."
+    },
+    {
+        "code": "IPI",
+        "title": "Interested Party Information Number",
+        "description": "Used for songwriter and publisher identification."
+    },
+    {
+        "code": "IPN",
+        "title": "International Performer Number",
+        "description": "Supports performer identification and royalty administration."
+    },
+    {
+        "code": "ISWC",
+        "title": "International Standard Musical Work Code",
+        "description": "Identifies musical compositions globally."
+    }
+]

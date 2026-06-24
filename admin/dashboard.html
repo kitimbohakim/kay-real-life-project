@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kay Real Life Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/activity.css" />
+    <link rel='stylesheet' href="css/submission-table.css" <script>
+    <script>
+
+        if (
+            localStorage.getItem("krl_logged_in")
+            !== "true"
+        ) {
+
+            alert(
+                "Sign in required to access the dashboard."
+            );
+
+            window.location.href =
+                "login.html";
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <div class="dashboard">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>Kay Real Life</h2>
+                <span>Admin Dashboard</span>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Dashboard navigation">
+                <a href="#" class="active">📊 Overview</a>
+                <a href="#">📩 Submissions</a>
+                <a href="#">💬 Messages</a>
+                <a href="#">⚙️ Settings</a>
+                <a href="#" id="logoutBtn">
+                    🚪 Logout
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Dashboard Overview</h1>
+                    <p>Manage artist submissions and leads.</p>
+                </div>
+            </header>
+
+            <section class="stats-grid" aria-label="Dashboard statistics">
+                <article class="stat-card">
+                    <h3>New Leads</h3>
+                    <span id="newLeadsCount">0</span>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Contacted</h3>
+                    <span id="contactedCount">0</span>
+                </article>
+
+                <article class="stat-card">
+                    <h3>In Progress</h3>
+                    <span id="progressCount">0</span>
+                </article>
+
+                <article class="stat-card">
+                    <h3>Completed</h3>
+                    <span id="completedCount">0</span>
+                </article>
+            </section>
+
+            <section class="activity-section">
+                <div class="activity-card">
+                    <div class="section-header">
+                        <h2>Recent Activity</h2>
+
+                        <span class="activity-count">
+                            Live Updates
+                        </span>
+                    </div>
+
+                    <div id="activityList" class="activity-list">
+                    </div>
+                </div>
+            </section>
+
+            <section class="submissions">
+                <div class="section-header">
+                    <h2>Recent Submissions</h2>
+                    <button class="view-all-btn" type="button">View All</button>
+                </div>
+
+                <div class="table-tools">
+
+                    <div class="filter-bar">
+
+                        <button class="filter-btn active" data-filter="all">
+                            All
+                        </button>
+
+                        <button class="filter-btn" data-filter="New">
+                            New
+                        </button>
+
+                        <button class="filter-btn" data-filter="Contacted">
+                            Contacted
+                        </button>
+
+                        <button class="filter-btn" data-filter="In Progress">
+                            In Progress
+                        </button>
+
+                        <button class="filter-btn" data-filter="Completed">
+                            Completed
+                        </button>
+
+                        <button class="filter-btn" data-filter="Not Serious">
+                            Not Serious
+                        </button>
+
+                    </div>
+
+                    <input type="text" id="searchSubmission" placeholder="Search by name, artist, email...">
+
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Artist</th>
+                                <th>Country</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="submissionsTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <div id="submissionModal" class="modal" aria-hidden="true">
+
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="submissionTitle">
+
+            <div class="modal-header">
+
+                <h2 id="submissionTitle">
+                    Submission Details
+                </h2>
+
+                <button class="close-modal" type="button" aria-label="Close modal">
+                    ✕
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="submission-info">
+
+                    <p>
+                        <strong>Name:</strong>
+                        <span id="modalName"></span>
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong>
+                        <span id="modalEmail"></span>
+                    </p>
+
+                    <p>
+                        <strong>Phone:</strong>
+                        <span id="modalPhone"></span>
+                    </p>
+
+                    <p>
+                        <strong>Artist:</strong>
+                        <span id="modalArtist"></span>
+                    </p>
+
+                    <p>
+                        <strong>Country:</strong>
+                        <span id="modalCountry"></span>
+                    </p>
+
+                    <p>
+                        <strong>Status:</strong>
+                        <span id="modalStatus"></span>
+                    </p>
+
+                    <div class="message-box">
+
+                        <h4>
+                            Artist Message
+                        </h4>
+
+                        <p id="modalMessage"></p>
+
+                    </div>
+
+                </div>
+
+                <div class="notes-section">
+
+                    <h4>
+                        Internal Notes
+                    </h4>
+
+                    <textarea id="adminNotes" rows="8" placeholder="Add notes about this artist..."></textarea>
+
+                    <button id="saveNotesBtn" class="action-btn" type="button">
+
+                        Save Notes
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="submission-actions">
+
+                <button class="status-btn new-btn" type="button" data-status="New">
+
+                    New
+
+                </button>
+
+                <button class="status-btn contacted-btn" type="button" data-status="Contacted">
+
+                    Contacted
+
+                </button>
+
+                <button class="status-btn progress-btn" type="button" data-status="In Progress">
+
+                    In Progress
+
+                </button>
+
+                <button class="status-btn complete-btn" type="button" data-status="Completed">
+
+                    Completed
+
+                </button>
+
+                <button class="status-btn reject-btn" type="button" data-status="Not Serious">
+
+                    Not Serious
+
+                </button>
+
+                <button id="deleteSubmissionBtn" class="delete-btn" type="button">
+                    Delete Submission
+                </button>
+
+                <button id="downloadPdfBtn" class="pdf-btn" type="button">
+                    Download PDF
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/auth-check.js"></script>
+    <script type="module" src="js/firebase-config.js"></script>
+    <script src="js/dashboard-core.js"></script>
+    <script src="js/dashboard-actions.js"></script>
+    <script src="js/dashboard-pdf.js"></script>
+</body>
+
+</html>

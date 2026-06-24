@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join Early Access | Kay Real Life</title>
+    <meta name="description"
+        content="Join Kay Real Life early access to get music distribution, publishing, rights, and industry support." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/globals.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/glass.css" />
+    <link rel="stylesheet" href="../css/buttons.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/navigation.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/join-early-access.css" />
+    <link rel="stylesheet" href="../css/contact.css" />
+</head>
+
+<body>
+    <div id="site-header"></div>
+
+    <main>
+        <section class="section join-hero">
+            <div class="join-hero__content">
+                <span class="badge">Join Early Access</span>
+                <h1>Be first when Kay Real Life opens the door wider.</h1>
+                <p>
+                    Join early access to stay close to Kay Real Life as the platform grows. Artists,
+                    songwriters, and music professionals can share interest now and be ready for what comes next.
+                </p>
+
+                <div class="hero__actions">
+                    <a href="#join-form" class="btn btn--primary">Join Now</a>
+                    <a href="../index.html" class="btn btn--ghost">Back to Home</a>
+                </div>
+            </div>
+
+            <div class="join-hero__visual glass-panel">
+                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1400&q=80"
+                    alt="Music collaboration" />
+                <div class="join-hero__overlay glass-panel">
+                    <h3>Early access keeps you close</h3>
+                    <p>Be among the first to hear about releases, support, and industry updates.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section join-benefits">
+            <div class="section__heading">
+                <span class="badge">Why Join?</span>
+                <h2>Stay ahead of the crowd.</h2>
+                <p>
+                    Early access is for people who want to be ready when the system goes live.
+                </p>
+            </div>
+
+            <div class="join-benefits__grid">
+                <article class="glass-panel join-card">
+                    <span class="join-card__number">01</span>
+                    <h3>First updates</h3>
+                    <p>Get news on new pages, features, and support options first.</p>
+                </article>
+
+                <article class="glass-panel join-card">
+                    <span class="join-card__number">02</span>
+                    <h3>Artist connection</h3>
+                    <p>Be part of a growing music brand that understands the business side too.</p>
+                </article>
+
+                <article class="glass-panel join-card">
+                    <span class="join-card__number">03</span>
+                    <h3>Premium readiness</h3>
+                    <p>Prepare for a more structured and professional music growth experience.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="join-form" class="section join-form-section">
+            <div class="join-form-layout">
+                <div class="glass-panel join-form-copy">
+                    <span class="badge badge--dark">Join Early Access</span>
+                    <h2>Tell us who you are and what you need.</h2>
+                    <p>
+                        Share your details and we will keep your interest on the list for early access updates.
+                    </p>
+
+                    <div class="join-points">
+                        <span>✔ Artist support</span>
+                        <span>✔ Music business guidance</span>
+                        <span>✔ Industry updates</span>
+                        <span>✔ Professional growth</span>
+                    </div>
+                </div>
+
+                <div class="glass-panel join-form-box">
+                    <h3>Early Access Form</h3>
+
+                    <form class="form" id="joinForm" autocomplete="on">
+                        <div class="form-row">
+                            <input type="text" name="name" placeholder="Your Name" autocomplete="name" required>
+                            <input type="email" name="email" placeholder="Email Address" autocomplete="email" required>
+                        </div>
+
+                        <input type="text" name="artist" placeholder="Artist / Brand Name" required>
+
+                        <div class="phone-field" data-country-picker>
+                            <button type="button" class="country-button" aria-expanded="false" aria-haspopup="listbox"
+                                aria-label="Choose country code">
+                                <span class="country-flag">🇺🇬</span>
+                                <span class="country-code-text">+256</span>
+                                <span class="country-caret">▾</span>
+                            </button>
+
+                            <input type="hidden" name="countryCode" id="countryCode" value="+256">
+
+                            <div class="country-dropdown" role="listbox" aria-label="Country codes">
+                                <button type="button" class="country-option" data-code="+256" data-flag="🇺🇬"
+                                    data-country="UG">
+                                    <span class="option-left"><span class="option-flag">🇺🇬</span> Uganda</span>
+                                    <span class="option-code">+256</span>
+                                </button>
+
+                                <button type="button" class="country-option" data-code="+254" data-flag="🇰🇪"
+                                    data-country="KE">
+                                    <span class="option-left"><span class="option-flag">🇰🇪</span> Kenya</span>
+                                    <span class="option-code">+254</span>
+                                </button>
+
+                                <button type="button" class="country-option" data-code="+255" data-flag="🇹🇿"
+                                    data-country="TZ">
+                                    <span class="option-left"><span class="option-flag">🇹🇿</span> Tanzania</span>
+                                    <span class="option-code">+255</span>
+                                </button>
+
+                                <button type="button" class="country-option" data-code="+250" data-flag="🇷🇼"
+                                    data-country="RW">
+                                    <span class="option-left"><span class="option-flag">🇷🇼</span> Rwanda</span>
+                                    <span class="option-code">+250</span>
+                                </button>
+
+                                <button type="button" class="country-option" data-code="+211" data-flag="🇸🇸"
+                                    data-country="SS">
+                                    <span class="option-left"><span class="option-flag">🇸🇸</span> South Sudan</span>
+                                    <span class="option-code">+211</span>
+                                </button>
+
+                                <button type="button" class="country-option" data-code="+234" data-flag="🇳🇬"
+                                    data-country="NG">
+                                    <span class="option-left"><span class="option-flag">🇳🇬</span> Nigeria</span>
+                                    <span class="option-code">+234</span>
+                                </button>
+
+                                <button type="button" class="country-option" data-code="+27" data-flag="🇿🇦"
+                                    data-country="ZA">
+                                    <span class="option-left"><span class="option-flag">🇿🇦</span> South Africa</span>
+                                    <span class="option-code">+27</span>
+                                </button>
+
+                                <button type="button" class="country-option" data-code="+44" data-flag="🇬🇧"
+                                    data-country="GB">
+                                    <span class="option-left"><span class="option-flag">🇬🇧</span> United
+                                        Kingdom</span>
+                                    <span class="option-code">+44</span>
+                                </button>
+
+                                <button type="button" class="country-option" data-code="+1" data-flag="🇺🇸"
+                                    data-country="US">
+                                    <span class="option-left"><span class="option-flag">🇺🇸</span> United States</span>
+                                    <span class="option-code">+1</span>
+                                </button>
+                            </div>
+
+                            <input type="tel" name="phone" id="phoneNumber" placeholder="Phone Number"
+                                autocomplete="tel" required inputmode="tel" pattern="[0-9\s()+-]{6,}">
+                        </div>
+
+                        <textarea rows="5" name="message" placeholder="Tell us why you want early access"
+                            required></textarea>
+
+                        <button type="submit" class="btn btn--primary">
+                            Join Early Access →
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <script type="module" src="../js/firebase-config.js"></script>
+    <script type="module" src="../js/contact-form.js"></script>
+    <script src="../js/includes.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/contact.js"></script>
+</body>
+
+</html>
