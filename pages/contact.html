@@ -23,6 +23,28 @@
     <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/contact-page.css" />
     <link rel="stylesheet" href="../css/contact.css" />
+    <link rel="stylesheet" href="../css/country-picker.css" />
+    <meta property="og:title" content="Kay Real Life | Music Distribution & Rights">
+
+    <meta property="og:description"
+        content="Helping artists distribute music worldwide, manage publishing, royalties and music rights.">
+
+    <meta property="og:image"
+        content="https://res.cloudinary.com/dwigi4tpd/image/upload/v1782551348/ChatGPT_Image_Jun_27_2026_12_03_44_PM_z69zrq.png">
+
+    <meta property="og:url" content="https://kayreallife.com">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:site_name" content="Kay Real Life">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="Kay Real Life">
+
+    <meta name="twitter:description" content="Music Distribution & Rights">
+
+    <meta name="twitter:image"
+        content="https://res.cloudinary.com/dwigi4tpd/image/upload/v1782551348/ChatGPT_Image_Jun_27_2026_12_03_44_PM_z69zrq.png">
 </head>
 
 <body>
@@ -163,66 +185,32 @@
                         <input type="text" name="artist" placeholder="Artist / Brand Name" required>
 
                         <div class="phone-field" data-country-picker>
-                            <button type="button" class="country-button" aria-expanded="false" aria-haspopup="listbox"
-                                aria-label="Choose country code">
-                                <span class="country-flag">🇺🇬</span>
-                                <span class="country-code-text">+256</span>
+
+                            <button type="button" class="country-button">
+
+                                <span class="country-flag"></span>
+
+                                <span class="country-code-text"></span>
+
                                 <span class="country-caret">▾</span>
+
                             </button>
 
-                            <input type="hidden" name="countryCode" id="countryCode" value="+256">
+                            <input type="hidden" name="countryCode">
+                            <div class="country-dropdown" role="listbox">
 
-                            <div class="country-dropdown" role="listbox" aria-label="Country codes">
-                                <button type="button" class="country-option" data-code="+256" data-flag="🇺🇬"
-                                    data-country="UG">
-                                    <span class="option-left"><span class="option-flag">🇺🇬</span> Uganda</span>
-                                    <span class="option-code">+256</span>
-                                </button>
-                                <button type="button" class="country-option" data-code="+254" data-flag="🇰🇪"
-                                    data-country="KE">
-                                    <span class="option-left"><span class="option-flag">🇰🇪</span> Kenya</span>
-                                    <span class="option-code">+254</span>
-                                </button>
-                                <button type="button" class="country-option" data-code="+255" data-flag="🇹🇿"
-                                    data-country="TZ">
-                                    <span class="option-left"><span class="option-flag">🇹🇿</span> Tanzania</span>
-                                    <span class="option-code">+255</span>
-                                </button>
-                                <button type="button" class="country-option" data-code="+250" data-flag="🇷🇼"
-                                    data-country="RW">
-                                    <span class="option-left"><span class="option-flag">🇷🇼</span> Rwanda</span>
-                                    <span class="option-code">+250</span>
-                                </button>
-                                <button type="button" class="country-option" data-code="+211" data-flag="🇸🇸"
-                                    data-country="SS">
-                                    <span class="option-left"><span class="option-flag">🇸🇸</span> South Sudan</span>
-                                    <span class="option-code">+211</span>
-                                </button>
-                                <button type="button" class="country-option" data-code="+234" data-flag="🇳🇬"
-                                    data-country="NG">
-                                    <span class="option-left"><span class="option-flag">🇳🇬</span> Nigeria</span>
-                                    <span class="option-code">+234</span>
-                                </button>
-                                <button type="button" class="country-option" data-code="+27" data-flag="🇿🇦"
-                                    data-country="ZA">
-                                    <span class="option-left"><span class="option-flag">🇿🇦</span> South Africa</span>
-                                    <span class="option-code">+27</span>
-                                </button>
-                                <button type="button" class="country-option" data-code="+44" data-flag="🇬🇧"
-                                    data-country="GB">
-                                    <span class="option-left"><span class="option-flag">🇬🇧</span> United
-                                        Kingdom</span>
-                                    <span class="option-code">+44</span>
-                                </button>
-                                <button type="button" class="country-option" data-code="+1" data-flag="🇺🇸"
-                                    data-country="US">
-                                    <span class="option-left"><span class="option-flag">🇺🇸</span> United States</span>
-                                    <span class="option-code">+1</span>
-                                </button>
+                                <div class="country-search">
+
+                                    <input type="text" class="country-search-input" placeholder="🔍 Search country...">
+
+                                </div>
+
+                                <div class="country-list"></div>
+
                             </div>
 
-                            <input type="tel" name="phone" id="phoneNumber" placeholder="Phone Number"
-                                autocomplete="tel" required inputmode="tel" pattern="[0-9\s()+-]{6,}">
+                            <input type="tel" name="phone" placeholder="Phone Number" autocomplete="tel" required>
+
                         </div>
 
                         <textarea rows="5" name="message" placeholder="Tell us how we can help" required></textarea>
@@ -238,10 +226,12 @@
 
     <div id="site-footer"></div>
     <script type="module" src="../js/firebase-config.js"></script>
-    <script type="module" src="../js/contact-form.js"></script>
+
     <script src="../js/includes.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/contact.js"></script>
+    <script type="module" src="../js/contact-form.js"></script>
+    <script src="../js/countries.js"></script>
+    <script src="../js/country-picker.js"></script>
 </body>
 
 </html>

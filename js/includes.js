@@ -32,17 +32,7 @@ function applyDynamicLinks() {
     });
 }
 
-window.addEventListener("DOMContentLoaded", async () => {
-    ensureFontAwesome();
 
-    const isInPagesFolder = window.location.pathname.includes("/pages/");
-    const basePath = isInPagesFolder ? "../" : "";
-
-    await loadComponent("site-header", `${basePath}components/header.html?v=2`);
-    await loadComponent("site-footer", `${basePath}components/footer.html?v=2`);
-
-    applyDynamicLinks();
-});
 
 window.addEventListener("DOMContentLoaded", async () => {
 
@@ -51,7 +41,8 @@ window.addEventListener("DOMContentLoaded", async () => {
     const isInPagesFolder =
         window.location.pathname.includes("/pages/");
 
-    const basePath = isInPagesFolder ? "../" : "";
+    const basePath =
+        isInPagesFolder ? "../" : "";
 
     await loadComponent(
         "site-header",
@@ -65,17 +56,20 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     applyDynamicLinks();
 
-    // MOBILE MENU
+    initMenu();
+    initNavbarScroll();
 
-    const menuToggle =
-        document.getElementById("menuToggle");
+    function initMenu() {
 
-    const navigation =
-        document.getElementById("navigation");
+        const menuToggle =
+            document.getElementById("menuToggle");
 
-    if (menuToggle && navigation) {
+        const navigation =
+            document.getElementById("navigation");
 
-        menuToggle.addEventListener("click", () => {
+        if (!menuToggle || !navigation) return;
+
+        menuToggle.onclick = () => {
 
             navigation.classList.toggle("active");
 
@@ -84,7 +78,47 @@ window.addEventListener("DOMContentLoaded", async () => {
                     ? "✕"
                     : "☰";
 
-        });
+        };
+
+    }
+
+    function initNavbarScroll() {
+
+        const header = document.querySelector(".header");
+        if (!header) return;
+
+        let lastScroll = window.pageYOffset;
+        const threshold = 8;
+
+        window.addEventListener("scroll", () => {
+
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 10) {
+                header.classList.remove("header-hidden");
+                lastScroll = currentScroll;
+                return;
+            }
+
+            if (Math.abs(currentScroll - lastScroll) < threshold) {
+                return;
+            }
+
+            if (currentScroll > lastScroll) {
+
+                // Going down → Hide
+                header.classList.add("header-hidden");
+
+            } else {
+
+                // Going up → Show
+                header.classList.remove("header-hidden");
+
+            }
+
+            lastScroll = currentScroll;
+
+        }, { passive: true });
 
     }
 

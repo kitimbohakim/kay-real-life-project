@@ -249,7 +249,13 @@
     }
 
     .country-dropdown {
-        width: 100%;
+
+        display: none;
+
+        max-height: 300px;
+
+        overflow-y: auto;
+
     }
 
     .contact-copy,

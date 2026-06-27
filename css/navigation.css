@@ -1,35 +1,54 @@
+/* =====================================
+   HEADER
+===================================== */
+
 .header {
     position: fixed;
-    top: 14px;
+    top: 8px;
     left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
 
-    width: calc(100% - 28px);
+    width: calc(100% - 20px);
     max-width: 1300px;
 
-    transform: translateX(-50%);
+    background: rgba(255, 255, 255, .45);
+    border: 1px solid rgba(255, 255, 255, .55);
+    border-radius: 22px;
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow: 0 18px 45px rgba(0, 0, 0, .08);
+
     opacity: 1;
 
-    background: rgba(255, 255, 255, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 24px;
-
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.05);
-
     transition:
-        transform 0.35s ease,
-        opacity 0.35s ease,
-        background 250ms ease,
-        box-shadow 250ms ease;
+        transform .35s ease,
+        opacity .35s ease,
+        background .3s ease,
+        box-shadow .3s ease;
 }
 
 .header-hidden {
-    transform: translate(-50%, -140%);
+    transform: translate(-50%, -130%);
     opacity: 0;
     pointer-events: none;
+}
+
+/* Hide while scrolling down */
+
+.header-hidden {
+    transform: translate(-50%, -130%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Optional glass effect once page is scrolled */
+
+.header.scrolled {
+    background: rgba(255, 255, 255, .70);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, .12);
 }
 
 .header-container {
@@ -38,8 +57,11 @@
     justify-content: space-between;
     gap: 18px;
     padding: 14px 22px;
-    transition: padding 250ms ease;
 }
+
+/* =====================================
+   LOGO
+===================================== */
 
 .logo {
     display: flex;
@@ -54,34 +76,33 @@
     border-radius: 16px;
     overflow: hidden;
     flex-shrink: 0;
-    box-shadow: 0 10px 24px rgba(27, 93, 99, 0.12);
 }
 
 .logo-icon img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    display: block;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
-    min-width: 0;
 }
 
 .logo-title {
     font-size: 1rem;
     font-weight: 800;
-    color: #17353a;
-    line-height: 1.1;
+    color: #17353A;
 }
 
 .logo-subtitle {
-    font-size: 0.75rem;
+    font-size: .75rem;
     color: #6f7f82;
-    line-height: 1.2;
 }
+
+/* =====================================
+   NAVIGATION
+===================================== */
 
 .navigation {
     display: flex;
@@ -91,10 +112,10 @@
 
 .navigation a {
     position: relative;
-    color: #17353a;
+    color: #17353A;
     font-weight: 600;
     padding: 8px 0;
-    transition: color 220ms ease;
+    transition: .25s;
 }
 
 .navigation a::after {
@@ -102,17 +123,21 @@
     position: absolute;
     left: 50%;
     bottom: -4px;
+
     width: 0;
     height: 3px;
+
     border-radius: 999px;
+
     transform: translateX(-50%);
-    background: linear-gradient(90deg, #1b5d63, #7cc6c3, #d2b48c);
-    box-shadow: 0 0 12px rgba(27, 93, 99, 0.22);
-    transition: width 260ms ease;
+
+    background: linear-gradient(90deg, #1B5D63, #7cc6c3, #d2b48c);
+
+    transition: .3s;
 }
 
 .navigation a:hover {
-    color: #1b5d63;
+    color: #1B5D63;
 }
 
 .navigation a:hover::after,
@@ -120,31 +145,36 @@
     width: 100%;
 }
 
-.navigation a.active {
-    color: #1b5d63;
-}
+/* =====================================
+   MOBILE MENU BUTTON
+===================================== */
 
 .menu-toggle {
     display: none;
+
     width: 50px;
     height: 50px;
+
     border: none;
     cursor: pointer;
+
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    font-size: 1.4rem;
-    color: #17353a;
+
+    background: rgba(255, 255, 255, .45);
+
     backdrop-filter: blur(16px);
+
+    font-size: 1.35rem;
 }
 
-@media (max-width: 1000px) {
+/* =====================================
+   TABLET & MOBILE
+===================================== */
+
+@media(max-width:1000px) {
+
     .navigation {
         display: none;
-    }
-
-    .header-container {
-        flex-wrap: wrap;
     }
 
     .menu-toggle {
@@ -153,137 +183,85 @@
         justify-content: center;
     }
 
-    .nav-cta {
-        order: 3;
-        width: 100%;
-        text-align: center;
-        justify-content: center;
-        margin-top: 12px;
+    .header-container {
+        flex-wrap: wrap;
     }
 
     .navigation.active {
         display: flex;
-        order: 4;
         width: 100%;
         flex-direction: column;
-        align-items: flex-start;
         gap: 0;
-        margin-top: 12px;
+
+        margin-top: 14px;
         padding: 14px;
+
         border-radius: 18px;
-        background: rgba(255, 255, 255, 0.4);
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        backdrop-filter: blur(20px);
+
+        background: rgba(255, 255, 255, .55);
     }
 
     .navigation a {
         width: 100%;
         padding: 14px 0;
-        border-bottom: 1px solid rgba(23, 53, 58, 0.08);
+        border-bottom: 1px solid rgba(0, 0, 0, .08);
     }
 
     .navigation a:last-child {
         border-bottom: none;
     }
+
+    /* Keep the CTA in the header row */
+    .nav-cta {
+        width: auto;
+        margin-top: 0;
+        margin-left: auto;
+        justify-content: center;
+    }
 }
 
-@media (max-width: 768px) {
+/* =====================================
+   PHONES
+===================================== */
+
+@media(max-width:768px) {
+
     .header {
-        top: 10px;
-        width: calc(100% - 16px);
-        border-radius: 20px;
+        top: 6px;
+        width: calc(100% - 12px);
+        border-radius: 18px;
     }
 
     .header-container {
-        padding: 12px 14px;
-        gap: 12px;
-    }
-
-    .logo {
-        flex: 1 1 auto;
+        padding: 12px;
         gap: 10px;
-        min-width: 0;
     }
 
     .logo-icon {
         width: 46px;
         height: 46px;
-        border-radius: 14px;
     }
 
     .logo-title {
-        font-size: 0.92rem;
-        line-height: 1.05;
+        font-size: .92rem;
     }
 
     .logo-subtitle {
-        font-size: 0.68rem;
-        line-height: 1.15;
+        font-size: .68rem;
     }
 
     .btn.btn--primary {
-        flex: 0 0 auto;
-        padding: 12px 16px;
-        font-size: 0.88rem;
-        border-radius: 999px;
-        white-space: nowrap;
+        font-size: .86rem;
+        padding: 11px 16px;
     }
 
-    .header-container::after {
-        content: "";
-        flex-basis: 100%;
-        height: 1px;
-        background: rgba(27, 93, 99, 0.08);
-        margin-top: 2px;
-    }
+    /* Hide Join Early Access button on phones */
 
     .nav-cta {
-        margin-top: 14px;
-    }
-
-    .logo-icon {
-        width: 48px;
-        height: 48px;
-    }
-
-    .logo-title {
-        font-size: 0.95rem;
-    }
-
-    .logo-subtitle {
-        font-size: 0.7rem;
-    }
-}
-
-@media (max-width: 520px) {
-    .header-container {
-        padding: 10px 12px;
-    }
-
-    .logo {
-        gap: 8px;
-    }
-
-    .logo-icon {
-        width: 42px;
-        height: 42px;
-        border-radius: 12px;
-    }
-
-    .logo-title {
-        font-size: 0.88rem;
-    }
-
-    .logo-subtitle {
-        font-size: 0.62rem;
-    }
-
-    .btn.btn--primary {
-        padding: 11px 14px;
-        font-size: 0.82rem;
+        display: none;
     }
 }
 
 body {
-    padding-top: 110px;
+    padding-top: 95px;
 }
